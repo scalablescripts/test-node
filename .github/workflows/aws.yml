@@ -25,9 +25,9 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          aws-access-key-id: AKIA3DB66ECONKPIND77
-          aws-secret-access-key: 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
-          aws-region: us-east-2
+          aws-access-key-id: "AKIA3DB66ECONKPIND77"
+          aws-secret-access-key: "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"
+          aws-region: "us-east-2"
 
       - name: Login to Amazon ECR
         id: login-ecr
@@ -36,12 +36,12 @@ jobs:
       - name: Build, tag, and push image to Amazon ECR
         id: build-image
         env:
-          ECR_REGISTRY: 762488692892.dkr.ecr.us-east-2.amazonaws.com
-          ECR_REPOSITORY: app
+          ECR_REGISTRY: "762488692892.dkr.ecr.us-east-2.amazonaws.com"
+          ECR_REPOSITORY: "app"
           IMAGE_TAG: latest
         run: |
-          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
-          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+          docker build -t 762488692892.dkr.ecr.us-east-2.amazonaws.com/app:latest .
+          docker push 762488692892.dkr.ecr.us-east-2.amazonaws.com/app:latest
 
       - name: Fill in the new image ID in the Amazon ECS task definition
         id: task-def-1
