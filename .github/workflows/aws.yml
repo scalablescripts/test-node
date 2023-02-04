@@ -6,7 +6,6 @@ on:
       - master
 env:
   AWS_REGION: us-east-2
-  ECR_REPOSITORY: app
   ECS_CLUSTER: app
   CONTAINER_NAME: app
   ECS_SERVICE: app
