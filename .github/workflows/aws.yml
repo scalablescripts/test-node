@@ -6,7 +6,7 @@ on:
       - master
 env:
   AWS_REGION: us-east-2
-  ECS_CLUSTER: app
+  ECS_CLUSTER: demo
   CONTAINER_NAME: app
   ECS_SERVICE: app
   ECS_TD: .github/workflows/td.json
